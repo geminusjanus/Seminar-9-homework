@@ -12,7 +12,9 @@ int numN = Convert.ToInt32(Console.ReadLine());
 int Sum(int num, int num2)
 {
     if (num == num2) return num2;
-    else return num + Sum(num + 1, num2);
+    if (num < num2) return num + Sum(num + 1, num2);
+    else return num + Sum(num - 1, num2);
+
 }
 
 int sum = Sum(numM, numN);
